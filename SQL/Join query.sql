@@ -17,7 +17,7 @@ SELECT  cs.user_id
         ,cs.created_time
         ,cs.domain_label
         ,cs.subdomain
-        ,case when cs.subdomain in (select * from search_urls) then 1 else 0 end AS is_serp
+        ,CASE WHEN cs.subdomain IN (SELECT * FROM search_urls) THEN 1 ELSE 0 END AS is_serp
         ,cs.url
         ,cs.query
         
@@ -41,8 +41,7 @@ AND s2.user_id = s.user_id
 AND s.is_serp = 1
 
 ;
-/* I performed a query for a specific user_id to find how many rows have been created,
- then I turned to the lead query after understanding it was impractical to continue with this direction*/
+/* I performed a query for a specific user_id to find how many rows have been created, then I turned to the lead query after understanding it was impractical to continue with this direction*/
 SELECT ccp.* 
 
 FROM CLICKSTREAM_CTR_PREP ccp
