@@ -41,6 +41,8 @@ AND s2.user_id = s.user_id
 AND s.is_serp = 1
 
 ;
+/* I performed a query for a specific user_id to find how many rows have been created,
+ then I turned to the lead query after understanding it was impractical to continue with this direction*/
 SELECT ccp.* 
 
 FROM CLICKSTREAM_CTR_PREP ccp
